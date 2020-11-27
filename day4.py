@@ -5,6 +5,7 @@ end = int(input.split("-")[1])
 sameadjacent = False
 count = 0
 current = start
+possiblepw = []
 while current <= end:
     digitlist = list(map(int, str(current)))
     for i in range(0, len(digitlist)+2):
@@ -13,6 +14,7 @@ while current <= end:
                 count = count + 1
                 sameadjacent = False
                 current += 1
+                possiblepw.append(current)
                 break
             else:
                 sameadjacent = False
@@ -28,3 +30,6 @@ while current <= end:
 print(count)
 
 #2
+import numpy.np
+
+possiblepw_np = np.array(possiblepw)
